@@ -41,3 +41,33 @@ python slack_app.py(슬랙 어플리케이션)
 4. 2026. Agent는 Context 문제가 있으므로, 일을 나누자 
 --> Agent를 이어 붙이는 Workflow를 구성하자 
 
+
+
+
+설명	링크
+LLM 지능 리더보드	https://artificialanalysis.ai/leaderboards/models
+TAVILY Search(웹 검색 API)	app.tavily.com/home
+다양한 LLM 어플리케이션의 시스템 프롬프트 유출	https://github.com/asgeirtj/system_prompts_leaks
+	
+Node.js 설치	https://nodejs.org/ko/download
+	
+Paper Search MCP	https://github.com/openags/paper-search-mcp
+	
+	https://ollama.com/download/windows
+	
+한국 MCP 서버 추천 모음	https://github.com/darjeeling/awesome-mcp-korea
+K-Skill Repo	https://github.com/NomaDamas/k-skill
+	
+PDF Skill	https://smithery.ai/skills/anthropics/pdf
+Skill Creator Skill	https://smithery.ai/skills/anthropics/skill-creator
+	
+	https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f
+	
+RipGrep: Grep을 대체하는 효율적인 키워드/패턴 검색 도구	https://github.com/burntsushi/ripgrep
+OmO: 멀티 에이전트 하네스 모범 사례	https://github.com/code-yeongyu/oh-my-openagent
+
+Hermes: Skill/Memory/MCP를 참고할 수 있는 대표적인 사례	https://github.com/NousResearch/hermes-agent
+
+GraphRAG의 간단한 방식: LightRAG	https://github.com/hkuds/lightrag
+
+https://docs.google.com/spreadsheets/d/1J_LtNWxxIjqLwrOxwYJ7dDo6Of3hPgKBs9Wf8o-nVOM/edit?gid=1074163753#gid=1074163753
