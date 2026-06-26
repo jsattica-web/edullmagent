@@ -1,0 +1,43 @@
+1) LLM(Context / Concurrent 서빙)
+2) Tool/MCP
+ - Tool의 범위가 곧 에이전트의 범위
+3) Middleware
+ - 목적에 맞는 Harness 붙임
+4) Skill
+ - 연속 작업에서 재사용 가능한 특화 컨텍스트
+5) Memory
+
+Slack 셋팅 방법
+https://bustling-pea-9a9.notion.site/LLM-Agent-Slack-38993e636af180d0a55be29f1b0c2b7b
+
+다이소 MCP : https://mcp.aka.page/mcp
+
+PlayMCP
+
+
+# 허깅페이스(https://huggingface.co/)에서 모델을 다운로드 받음
+cd /workspace/lab && hf download QuantTrio/Qwen3.6-35B-A3B-AWQ --local-dir ./outputs/models/Qwen3.6-35B-A3B-AWQ
+
+# 다운로드 받은 모델 vllm 서빙 
+uvx --python 3.12 --from vllm==0.19.1 vllm serve outputs/models/Qwen3.6-35B-A3B-AWQ \
+  --port 8000 --max-model-len 131072 --gpu-memory-utilization 0.7 \
+  --reasoning-parser qwen3 --quantization moe_wna16 --language-model-only \
+  --enable-auto-tool-choice --tool-call-parser qwen3_coder \
+  --speculative-config '{"method":"mtp","num_speculative_tokens":2}' \
+  --served-model-name Qwen3.6-35B-A3B-AWQ
+
+# .env 셋팅
+OPENAI / TAVILY / SLACK 등의 API KEY 셋팅
+
+# 서빙 완료 후 서버 준비
+python slack_mcp_server.py(슬랙 MCP 서버)
+python tavily_server.py(웹 검색 서버)
+python slack_app.py(슬랙 어플리케이션)
+
+[LLM Workflow와 LangGraph]
+1. 2023. AutoGPT, BabyAGI
+2. 2024. Autonomous Agent를 해체해서, Workflow 구성하자!
+3. 2025. Claude Code는 잘 하는데? --> Workflow <<< Agent
+4. 2026. Agent는 Context 문제가 있으므로, 일을 나누자 
+--> Agent를 이어 붙이는 Workflow를 구성하자 
+
